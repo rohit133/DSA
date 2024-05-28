@@ -6,10 +6,16 @@ import time
 start_time = time.time()
 
 def sumTwo(arr, target):
-    sum = 0
-    for element in arr:
-        if element == target:
-            pass
+    max_value = 0
+    for i in range(len(arr)):
+        if arr[i] > max_value:
+            max_value += arr[i]
+        if max_value == target:
+            return True
+        else: 
+            continue
+            
+
         
     
 
