@@ -6,23 +6,15 @@ import time
 start_time = time.time()
 
 def sumTwo(arr, target):
-    max_value = 0
-    for i in range(len(arr)):
-        if arr[i] > max_value:
-            max_value += arr[i]
-        if max_value == target:
-            return True
-        else: 
-            continue
-            
-
-        
+    result = {}
+    for i in range(len(arr)): 
+        diff = target - arr[i] 
+        if diff in result:
+            return [result[diff], i]
+        result[arr[i]] = i
     
-
-
-
-
-print(sumTwo([2,7,11,15], 9))
+        
+print(sumTwo([1,7,11,15], 12))
 end_time = time.time()
 elapsed_time = (end_time - start_time) * 1000  # Convert to milliseconds
 print(f"Time Taken by your code: {elapsed_time:.4f} ms")
