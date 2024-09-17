@@ -12,7 +12,7 @@ public class CountDigit {
     }
 
     public static void main(String[] args) {
-        System.err.println(count(1909));
+        System.out.println(count(1909));
     }
 
 }

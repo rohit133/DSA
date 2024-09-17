@@ -20,8 +20,8 @@ public class Factorial {
     }
 
     public static void main(String[] args) {
-        System.err.println(findFactorial(100));
-        System.err.println(RecursiveFactorial(100));
+        System.out.println(findFactorial(100));
+        System.out.println(RecursiveFactorial(100));
 
     }
 }

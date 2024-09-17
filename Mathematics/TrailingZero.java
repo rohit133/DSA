@@ -14,7 +14,7 @@ public class TrailingZero {
         return rem;
     }
 
-    public static int countZeroEff(int num) {
+    public static int countZeroEfficientMethod(int num) {
         // Optimied approce for counting the traling zeros.
         int result = 0;
         for (int i = 5; i <= num; i = i * 5)
@@ -23,8 +23,8 @@ public class TrailingZero {
     }
 
     public static void main(String[] args) {
-        System.err.println(countZero(10));
-        System.err.println(countZeroEff(1000));
+        System.out.println(countZero(10));
+        System.out.println(countZeroEfficientMethod(1000));
     }
 
 }

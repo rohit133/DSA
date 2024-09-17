@@ -35,9 +35,9 @@ public class GCD {
     }
 
     public static void main(String[] args) {
-        System.err.println(gcdNavie(12, 15));
-        System.err.println(EuclideanGCDBase(12, 15));
-        System.err.println(OptimzedEuclideanGCD(12, 15));
+        System.out.println(gcdNavie(12, 15));
+        System.out.println(EuclideanGCDBase(12, 15));
+        System.out.println(OptimzedEuclideanGCD(12, 15));
 
     }
 }

@@ -17,7 +17,7 @@ public class Palindrome {
     }
 
     public static void main(String[] args) {
-        System.err.println(isPalindrome(1011));
+        System.out.println(isPalindrome(1011));
     }
 
 }

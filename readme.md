@@ -14,6 +14,7 @@ In the field of computer science, proficiency in Data Structures and Algorithms 
 ## Topics Covered
 The repository covers solutions to DSA questions from various major topics, including but not limited to:
 
+* Mathematics
 * Arrays and Strings
 * Linked Lists
 * Stacks and Queues
