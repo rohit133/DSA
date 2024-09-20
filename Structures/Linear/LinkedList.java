@@ -36,6 +36,20 @@ class SinglyLinkedList {
         }
     }
 
+    public void givenPosition(int data, int positions){
+        Node newNode = new Node(data);
+        if(positions == 0){
+            newNode.next = head;
+        }
+        Node current = head;
+        for(int i=0; i<positions-1; i++){
+            if(current == null)
+                System.out.println("Invalid position");
+        }
+        current = current.next;
+        newNode.next = current.next;
+        current.next = newNode;
+    }
 
     
 
@@ -63,12 +77,17 @@ public class LinkedList {
         singleLinkedList.appendNode(39);
         singleLinkedList.viewList();
         singleLinkedList.insertNode(10);
+
         System.out.println("after Inserting at the Begining: ");
         singleLinkedList.viewList();
 
         System.out.println("after Inserting at the End: ");
         singleLinkedList.appendNode(50);
+        singleLinkedList.viewList();
 
+        System.out.println("after Inserting at the given positions: ");
+        singleLinkedList.givenPosition(5, 3);
+        singleLinkedList.givenPosition(1,2);
         singleLinkedList.viewList();
 
 
