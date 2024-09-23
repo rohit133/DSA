@@ -13,10 +13,10 @@ class Node {
 class SinglyLinkedList {
     private Node head;
 
-    public void insertNode(int data){
+    public void insertNode(int data) {
         // Description: Insert a new node at the start of the list
-        
-        Node newNode = new Node(data);       
+
+        Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
@@ -36,14 +36,16 @@ class SinglyLinkedList {
         }
     }
 
-    public void givenPosition(int data, int positions){
+    public void givenPosition(int data, int positions) {
+        // Description: Insert a new node at the given position of the list.
+
         Node newNode = new Node(data);
-        if(positions == 0){
+        if (positions == 0) {
             newNode.next = head;
         }
         Node current = head;
-        for(int i=0; i<positions-1; i++){
-            if(current == null)
+        for (int i = 0; i < positions - 1; i++) {
+            if (current == null)
                 System.out.println("Invalid position");
         }
         current = current.next;
@@ -51,12 +53,95 @@ class SinglyLinkedList {
         current.next = newNode;
     }
 
-    
+    public Node deleteByValue(int value) {
+        if (head == null) {
+            return null; // If the list is empty
+        }
 
-    public void viewList(){
+        if (head.data == value) {
+                head = head.next;
+                return head;
+        }
+
+        Node prev = null;
+        Node current = head;
+
+        while (current != null) {
+            if (current.data == value) {
+                prev.next = current.next;
+                return head;
+            }
+            prev = current;
+            current = current.next;
+        }
+        return head;
+
+    }
+
+    public Node deleteAtBeginning(){
+        if (head == null){
+            return null;
+        }
+        return head = head.next;
+    }
+
+    public Node deleteAtEnd(){
+        if (head == null) {
+            return null; // If the list is empty
+        }
+    
+        if(head.next == null){
+            return null;
+        }
+
+        Node current = head;
+
+        while (current.next.next != null) {
+                current = current.next;
+        }
+        return current.next = null;
+
+    }
+
+    public boolean searchByValue(int value){
+        if(head == null){
+            return false;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if(current.data == value){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+
+    }
+
+    public void reverseNode(){
+        Node prev = null;
+        Node current = head;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        while (prev != null) {
+            viewList();
+            next = prev.next;
+        }
+  
+    }
+
+
+
+
+    public void viewList() {
         Node temp = head;
         while (temp != null) {
-            System.err.print(temp.data + " -> ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
         System.out.println("null");
@@ -65,7 +150,6 @@ class SinglyLinkedList {
 }
 
 public class LinkedList {
-
 
     public static void main(String[] args) {
 
@@ -87,12 +171,23 @@ public class LinkedList {
 
         System.out.println("after Inserting at the given positions: ");
         singleLinkedList.givenPosition(5, 3);
-        singleLinkedList.givenPosition(1,2);
+        singleLinkedList.givenPosition(1, 2);
         singleLinkedList.viewList();
 
 
-        
+        System.out.println("after deleteing by the given positions: ");
+        singleLinkedList.deleteByValue(19);
+        singleLinkedList.viewList();
 
+        singleLinkedList.deleteAtBeginning();
+        singleLinkedList.viewList();
+
+        singleLinkedList.deleteAtEnd();
+        singleLinkedList.viewList();
+        System.out.println(singleLinkedList.searchByValue(29));
+
+        System.out.println("Reversing the Linked List: ");
+        singleLinkedList.reverseNode();
     }
- 
+
 }
