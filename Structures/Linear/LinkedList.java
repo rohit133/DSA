@@ -118,25 +118,67 @@ class SinglyLinkedList {
 
     }
 
-    public void reverseNode(){
+    public Node reverseNode(){
         Node prev = null;
         Node current = head;
         Node next;
+
         while (current != null) {
             next = current.next;
             current.next = prev;
             prev = current;
             current = next;
         }
-        while (prev != null) {
-            viewList();
-            next = prev.next;
+        head = prev;  // Set the last node as the new head
+        return head;
+    }
+
+    public int getListLength(){
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count ++;
+            current = current.next;
         }
-  
+        return count;
+    }
+    
+    public Boolean isListEmpty(){
+        if (head == null){
+            return true;
+        }
+        return false;
+    }
+
+    public Node findMiddleNode(){
+        if (head == null){
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next.next != null) {
+            slow = slow.next;
+            fast =  fast.next.next;
+        }
+        return slow;
     }
 
 
+    public Boolean detectLoop(){
+        if (head == null){
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next.next != null) {
+            slow = slow.next;
+            fast =  fast.next.next;
+            if (slow == fast)   
+                return true;
 
+        }
+        return false;
+    }
 
     public void viewList() {
         Node temp = head;
@@ -188,6 +230,7 @@ public class LinkedList {
 
         System.out.println("Reversing the Linked List: ");
         singleLinkedList.reverseNode();
+        singleLinkedList.viewList();
     }
 
 }
