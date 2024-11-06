@@ -13,8 +13,23 @@ def sumTwo(arr, target):
             return [result[diff], i]
         result[arr[i]] = i
     
-        
-print(sumTwo([1,7,11,15], 12))
+
+
+def getSum(arr, t):
+    result = {}
+    for i in range(len(arr)):
+        diff = t - arr[i]
+        if diff in result:
+            return [result[diff], i]
+        result[arr[i]] = i
+    
+    return result
+
+
+
+
+     
+print(getSum([1,7,11,15], 12))
 end_time = time.time()
 elapsed_time = (end_time - start_time) * 1000  # Convert to milliseconds
 print(f"Time Taken by your code: {elapsed_time:.4f} ms")

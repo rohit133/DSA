@@ -10,8 +10,18 @@ def containsDuplicate(nums):
     duplicate_keys = set(nums)
     return len(duplicate_keys) != len(nums)
 
-print(containsDuplicate([1,2,3,1]))
-print(containsDuplicate([1,2,3,4]))
+def containDuplicate(nums):
+    newList = []
+    for i in nums:
+        if i not in newList:
+            newList.append(i)
+    return len(newList) != len(nums)
+        
+        
+            
+
+# print(containDuplicate([1,2,3,1]))
+# print(containDuplicate([1,2,3,4]))
 print(containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
 print(containsDuplicate([1,2,3,4,5,6]))
 
