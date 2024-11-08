@@ -10,6 +10,18 @@
  * @param {number} right
  * @return {number}
  */
-var vowelStrings = function(words, left, right) {
-    
+var vowelStrings = function (words, left, right) {
+  let result = 0;
+  const VOWELS = ["a", "e", "i", "o", "u"];
+  for (let i = left; i <= right; i++) {
+    if (
+      VOWELS.includes(words[i][0]) &&
+      VOWELS.includes(words[i].at(-1))
+    ) {
+      result++;
+    }
+  }
+  return result;
 };
+
+console.log(vowelStrings(["are", "amy", "u"], (left = 0), (right = 2)));
