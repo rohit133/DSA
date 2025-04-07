@@ -1,102 +1,336 @@
-// Create a new linked list that has all the methods in it.
+//   // Create a new linked list that has all the methods in it.
+
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class LinkedList {
+//   constructor() {
+//     this.head = null;
+//   }
+
+//   push(value) {
+//     let newNode = new Node(value);
+//     if (!this.head) {
+//       this.head = newNode;
+//       return;
+//     } else {
+//       newNode.next = this.head;
+//       this.head = newNode;
+//     }
+//   }
+
+//   append(value) {
+//     let newNode = new Node(value);
+//     if (!this.head) {
+//       this.head = newNode;
+//       return;
+//     }
+//     let current = this.head;
+//     while (current.next) {
+//       current = current.next;
+//     }
+//     current.next = newNode;
+//   }
+
+//   addAtGivenPosition(value, position) {
+//     let newNode = new Node(value);
+//     if (!this.head) {
+//       this.head = newNode;
+//       return;
+//     }
+//     if (position === 0) {
+//       newNode.next = this.head;
+//       this.head = newNode;
+//       return;
+//     }
+//     let current = this.head;
+//     let index = 0;
+
+//     while (current.next !== null && index < position - 1) {
+//       current = current.next;
+//       index++;
+//     }
+//     if (current.next != null) {
+//       newNode.next = current.next;
+//       current.next = newNode;
+//     }
+//   }
+
+//   deleteFromFront() {
+//     if (!this.head) return;
+//     this.head = this.head.next;
+//   }
+
+//   deleteFromEnd() {
+//     if (!this.head) return;
+//     let current = this.head;
+//     while (current.next.next !== null) {
+//       current = current.next;
+//     }
+//     current.next = null;
+//   }
+
+//   deleteByValue(value) {
+//     if (!this.head) {
+//       return;
+//     }
+//     let current = this.head;
+//     while(current.next !== null && current.next.value !== value){
+//       current = current.next;
+//     }
+//     if (current.next !== null) {
+//       current.next = current.next.next;
+//     }
+//   }
+
+//   print() {
+//     if (!this.head) return;
+//     let result = "";
+//     let current = this.head;
+//     while (current) {
+//       result += current.value + "->";
+//       current = current.next;
+//     }
+//     console.log(result, "null");
+//   }
+// }
+
+
+// let list = new LinkedList();
+
+// list.push(1);
+// list.push(0);
+// list.append(2);
+// list.append(3);
+// list.append(5);
+
+// console.log("Priting list with only input op's: ");
+// list.print();
+
+// console.log("Adding the input at the mid op's: ");
+// list.addAtGivenPosition(4, 4)
+// list.print();
+
+// console.log("Removing the element from the front op's: ");
+// list.deleteFromFront();
+// list.print();
+
+// console.log("Removing the element from the mid op's: ");
+// list.deleteByValue(2);
+// list.print();
+
+// console.log("Removing the element from the End op's: ");
+// list.deleteFromEnd();
+// list.print();
+
+
+
+// Revision 
+
+// class Node {
+//   constructor(value){
+//       this.value = value;
+//       this.next = null;
+//   }
+// }
+
+// class LinkedList{
+//   constructor(){
+//       this.head = null
+//   }
+//   push(value){
+//       let newNode = new Node(value);
+//       if(!this.head){
+//           this.head = newNode;
+//           return
+//       } else {
+//           newNode.next = this.head
+//           this.head = newNode;
+//       }
+//   }
+//   append(value){
+//       let newNode = new Node(value);
+//       if(!this.head){
+//           this.head = newNode;
+//           return
+//       } 
+//       let current = this.head;
+//       while(current.next){
+//           current = current.next;
+//       }
+//       current.next = newNode;
+//   }
+  
+//   addAtGivenPosition(value, position){
+//       let newNode = new Node(value);
+//       if(!this.head){
+//           this.head = newNode;
+//           return;
+//       }
+      
+//       if(position === 0){
+//         newNode.next = this.head;
+//         this.head = newNode;
+//         return;
+//       }
+      
+//       let current = this.head;
+//       let index = 0
+
+//       while(current.next !== null && index < position - 1){
+//           current = current.next;
+//           index++;
+//       }
+//       if(current.next !== null){
+//           newNode.next = current.next 
+//           current.next = newNode;
+//       }
+//   }
+//   pop(){  
+//       if(!this.head) return;
+//       this.head = this.head.next;
+//   }
+//   deleteFromEnd(){
+//       if(!this.head) return;
+//       let current = this.head;
+//       while(current.next.next !== null){
+//           current = current.next
+//       }
+//       current.next = null;
+//   }
+//   deleteByValue(value){
+//       if(!this.head)return;
+//       let current = this.head;
+//       while(current.next !== null && current.next.value !== value){
+//           current = current.next;
+//       }
+//       if(current.next !== null)
+//           current.next = current.next.next;
+//   }
+//   print(){
+//       if(!this.head) return;
+//       let result = "";
+//       let current = this.head;
+//       while(current){
+//           result += current.value + "->"
+//           current = current.next;
+//       }
+//       console.log(result,"null");
+//   }
+// }
+
+
+
+// Revision: 
 
 class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
 }
 
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
+class LinkedList{
+    constructor(){
+        this.head = null;
+    }
+    // Add infront
+    push(value){
+        let newNode = new Node(value);
+        
+        // Checking if the list is empty
+        if(!this.head){
+            this.head = newNode;
+            return;
+        }
+        newNode.next = this.head
+        this.head = newNode;
+    }
 
-  push(value) {
-    let newNode = new Node(value);
-    if (!this.head) {
-      this.head = newNode;
-      return;
-    } else {
-      newNode.next = this.head;
-      this.head = newNode;
+    append(value){
+        let newNode = new Node(value);
+        
+        // Checking if the list is empty
+        if(!this.head){
+            this.head = newNode;
+            return;
+        }
+        let current = this.head;
+        while(current.next){
+            current = current.next
+        }
+        current.next = newNode;
     }
-  }
 
-  append(value) {
-    let newNode = new Node(value);
-    if (!this.head) {
-      this.head = newNode;
-      return;
-    }
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
-    }
-    current.next = newNode;
-  }
+    addAtGivenPosition(value, position){
+        let newNode = new Node(value);
+        
+        // Checking if the list is empty
+        if(!this.head){
+            this.head = newNode;
+            return;
+        }
+        if(position == 0){
+            newNode = this.head;
+            this.head = newNode;
+            return
+        }
+        let current = this.head;
+        let index = 0;
 
-  addAtGivenPosition(value, position) {
-    let newNode = new Node(value);
-    if (!this.head) {
-      this.head = newNode;
-      return;
+        while(current.next !== null && index < position - 1){
+            current = current.next;
+            index++;
+        }
+        if(current.next !== null){
+            newNode.next = current.next;
+            current.next = newNode;
+        }
     }
-    if (position === 0) {
-      newNode.next = this.head;
-      this.head = newNode;
-      return;
-    }
-    let current = this.head;
-    let index = 0;
 
-    while (current.next !== null && index < position - 1) {
-      current = current.next;
-      index++;
+    pop(){
+        if(!this.head) return;
+        this.head = this.head.next;
     }
-    if (current.next != null) {
-      newNode.next = current.next;
-      current.next = newNode;
+    popEnd(){
+        if(!this.head) return;
+        let current = this.head;
+        while(current.next.next !== null){
+            current = current.next;
+        }
+        current.next = null;
     }
-  }
 
-  deleteFromFront() {
-    if (!this.head) return;
-    this.head = this.head.next;
-  }
+    popByValue(value){
+        if(!this.head) return;
+        // If the head needs to be removed, update the head pointer.
+        if (this.head.value === value) {
+            this.head = this.head.next;
+            return;
+        }
+        let current = this.head;
+        while(current.next !== null && current.next.value !== value){
+            current = current.next;
+        }
+        if(current.next !== null){
+            current.next = current.next.next;
+        }
+    }
 
-  deleteFromEnd() {
-    if (!this.head) return;
-    let current = this.head;
-    while (current.next.next !== null) {
-      current = current.next;
+    print(){
+        let current = this.head;
+        let result = "";
+        while(current){
+            result += current.value + "->";
+            current = current.next;
+        }
+        console.log(result, "null");
     }
-    current.next = null;
-  }
 
-  deleteByValue(value) {
-    if (!this.head) {
-      return;
-    }
-    let current = this.head;
-    while (current.next !== null && current.value !== value) {
-      current = current.next;
-    }
-    if (current.next !== null) {
-      current.next = current.next.next;
-    }
-  }
-
-  print() {
-    if (!this.head) return;
-    let result = "";
-    let current = this.head;
-    while (current) {
-      result += current.value + "->";
-      current = current.next;
-    }
-    console.log(result, "null");
-  }
 }
 
 
@@ -116,13 +350,15 @@ list.addAtGivenPosition(4, 4)
 list.print();
 
 console.log("Removing the element from the front op's: ");
-list.deleteFromFront();
+list.pop();
 list.print();
 
 console.log("Removing the element from the mid op's: ");
-list.deleteByValue(2);
+list.popByValue(2);
 list.print();
 
 console.log("Removing the element from the End op's: ");
-list.deleteFromEnd();
+list.popEnd();
 list.print();
+
+
