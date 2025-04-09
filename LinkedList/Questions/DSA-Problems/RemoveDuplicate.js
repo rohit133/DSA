@@ -19,4 +19,4 @@ var deleteDuplicates = function (head) {
         temp = temp.next;
     }
     return head;
-};
+};  
