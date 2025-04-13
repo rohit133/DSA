@@ -36,5 +36,5 @@ function mycode(original) {
     return result;
 }
 // result = mycode("r0h1tsharma");
-result = mycode("aklajewlfjk");
+// result = mycode("aklajewlfjk");
 console.log(result);
