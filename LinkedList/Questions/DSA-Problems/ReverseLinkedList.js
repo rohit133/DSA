@@ -6,8 +6,7 @@
  */
 
 function reverseLinkedList(head){
-    let current = head;
-    let prev = null;
+    let current = head, prev = null;
     while(current !== null){
         let forward = current.next;
         current.next = prev;
