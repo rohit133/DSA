@@ -9,12 +9,10 @@ function mostFrequentDSA(text) {
     let maxCount = 0;
     let maxWord = "";
     for(let word of text){
-        let count = hasMap.get(word) || 0;
-        hasMap.set(word, count + 1);
+        hasMap.set(word, (hasMap.get(word) || 0) + 1);
     }
 
     for(let [ch, freq] of hasMap){
-        let freq = hasMap.get(ch) || 0;
         if(freq > maxCount){
             maxWord = ch;
             maxCount = freq;
