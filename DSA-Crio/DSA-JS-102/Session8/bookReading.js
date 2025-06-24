@@ -17,7 +17,7 @@ function bookReading(n, h, a) {
     r = Math.max(a[i], r);
   }
   let ans = 0;
-  while (l <= r) {
+  while (l <= r) {  
     let mid = Math.floor((l + r) / 2);
     if (isMidValid(mid, h, a)) {
       ans = mid;
